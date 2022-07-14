@@ -9,7 +9,6 @@ import com.otsembo.userdatabase.databinding.FragmentAddUserBinding
 
 class FragmentAddUser : Fragment() {
 
-
     private lateinit var binding: FragmentAddUserBinding
 
     override fun onCreateView(

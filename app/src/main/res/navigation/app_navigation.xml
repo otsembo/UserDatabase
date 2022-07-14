@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/app_navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/fragmentAddUser">
 
+    <fragment
+        android:id="@+id/fragmentAddUser"
+        android:name="com.otsembo.userdatabase.presentation.adduser.FragmentAddUser"
+        android:label="FragmentAddUser"
+        tools:layout="@layout/fragment_add_user">
+        <action
+            android:id="@+id/action_fragmentAddUser_to_fragmentUserList"
+            app:destination="@id/fragmentUserList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentUserList"
+        android:name="com.otsembo.userdatabase.presentation.userlist.FragmentUserList"
+        android:label="FragmentUserList"
+        tools:layout="@layout/fragment_user_list">
+        <action
+            android:id="@+id/action_fragmentUserList_to_fragmentUserDetail"
+            app:destination="@id/fragmentUserDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentUserDetail"
+        android:name="com.otsembo.userdatabase.presentation.userdetail.FragmentUserDetail"
+        android:label="FragmentUserDetail"
+        tools:layout="@layout/fragment_user_detail"/>
 </navigation>
