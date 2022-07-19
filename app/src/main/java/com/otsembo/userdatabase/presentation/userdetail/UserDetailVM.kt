@@ -1,4 +1,8 @@
 package com.otsembo.userdatabase.presentation.userdetail
 
-class UserDetailVM {
+import androidx.lifecycle.ViewModel
+
+class UserDetailVM : ViewModel(){
+
+
 }
