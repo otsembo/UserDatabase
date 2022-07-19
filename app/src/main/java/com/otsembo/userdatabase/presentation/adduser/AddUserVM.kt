@@ -1,4 +1,8 @@
 package com.otsembo.userdatabase.presentation.adduser
 
-class AddUserVM {
+import androidx.lifecycle.ViewModel
+
+class AddUserVM : ViewModel(){
+
+
 }
