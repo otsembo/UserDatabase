@@ -12,13 +12,12 @@ import com.otsembo.userdatabase.presentation.UserAdapter
 class FragmentUserList : Fragment() {
 
     private lateinit var binding: FragmentUserListBinding
-    private val userListVM : UserListVM by viewModels()
+    private val userListVM: UserListVM by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentUserListBinding.inflate(inflater, container, false)
-        val adapter = UserAdapter()
+        val adapter = UserAdapter(emptyList())
         binding.userList.adapter = adapter
         return binding.root
     }
-
 }
