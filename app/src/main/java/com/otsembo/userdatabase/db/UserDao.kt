@@ -1,5 +1,6 @@
 package com.otsembo.userdatabase.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.* // ktlint-disable no-wildcard-imports
 import com.otsembo.userdatabase.model.User
 
@@ -7,17 +8,17 @@ import com.otsembo.userdatabase.model.User
 interface UserDao {
     // CRUD (Create Read Update Delete)
     @Insert
-    fun createUser(user: User)
+    suspend fun createUser(user: User)
 
     @Update
-    fun updateUser(user: User)
+    suspend fun updateUser(user: User)
 
     @Delete
-    fun deleteUser(user: User)
+    suspend fun deleteUser(user: User)
 
     @Query("SELECT * FROM users")
-    fun getAllUsers(): List<User>
+    fun getAllUsers(): LiveData<List<User>>
 
     @Query("SELECT * FROM users WHERE email_address = :email")
-    fun getUserByEmail(email: String): List<User>
+    suspend fun getUserByEmail(email: String): List<User>
 }

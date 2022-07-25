@@ -4,7 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
+        <variable
+            name="user"
+            type="com.otsembo.userdatabase.model.User" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -24,6 +26,7 @@
                 android:id="@+id/txtName"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:text="@{user.name}"
                 tools:text="@tools:sample/full_names"/>
 
             <TextView
@@ -32,6 +35,7 @@
                 android:id="@+id/txtEmail"
                 android:textSize="20sp"
                 android:textStyle="italic"
+                android:text="@{user.email}"
                 android:layout_marginTop="8dp"
                 tools:text="@tools:sample/cities"/>
 
@@ -41,6 +45,7 @@
                 android:id="@+id/txtPhone"
                 android:textSize="20sp"
                 android:textStyle="normal"
+                android:text="@{user.phone}"
                 android:layout_marginTop="8dp"
                 tools:text="@tools:sample/us_phones"/>
 
