@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.otsembo.userdatabase.model.User
 
-@Database(entities = [User::class], version = 1)
+@Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
@@ -22,6 +22,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java, "user_db"
                 )
                     .fallbackToDestructiveMigration()
+                    .enableMultiInstanceInvalidation()
                     .build()
                     .also { db -> APP_DB = db }
             }

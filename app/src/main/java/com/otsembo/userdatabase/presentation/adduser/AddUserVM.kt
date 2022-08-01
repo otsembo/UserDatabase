@@ -19,4 +19,16 @@ class AddUserVM(private val db: AppDatabase) : ViewModel() {
         val user = User(id = 0, name = name.value!!, email = email.value!!, phone = phone.value!!)
         viewModelScope.launch { userDao.createUser(user) }
     }
+
+    fun delete(user: User) {
+        viewModelScope.launch {
+            userDao.deleteUser(user)
+        }
+    }
+
+    fun update(user: User) {
+        viewModelScope.launch {
+            userDao.updateUser(user)
+        }
+    }
 }

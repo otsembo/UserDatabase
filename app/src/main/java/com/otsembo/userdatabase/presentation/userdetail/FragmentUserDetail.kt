@@ -12,6 +12,7 @@ class FragmentUserDetail : Fragment() {
 
     private lateinit var binding: FragmentUserDetailBinding
     private val userDetailVM : UserDetailVM by viewModels()
+    // TODO: COMPLETE THE USERDETAILS PAGE
 
     override fun onCreateView(
         inflater: LayoutInflater,
