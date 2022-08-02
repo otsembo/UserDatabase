@@ -2,14 +2,19 @@ package com.otsembo.userdatabase.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.* // ktlint-disable no-wildcard-imports
-import androidx.room.OnConflictStrategy.REPLACE
 import com.otsembo.userdatabase.model.User
 
 @Dao
 interface UserDao {
     // CRUD (Create Read Update Delete)
-    @Insert(onConflict = REPLACE)
+    @Insert
     suspend fun createUser(user: User)
+
+    @Insert
+    fun insertUser(vararg user: User)
+
+    @Query("SELECT * FROM users")
+    fun getAll(): List<User>
 
     @Update
     suspend fun updateUser(user: User)
